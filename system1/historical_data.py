@@ -5,7 +5,6 @@ class HistoricalData:
         self.api = CryptoAPI()
 
     async def get_historical_prices(self, coin_id, days):
-        # This method needs to be implemented in the CryptoAPI class
         return await self.api.get_historical_prices(coin_id, days)
 
     async def simulate_notifications(self, coin_id, days, threshold):

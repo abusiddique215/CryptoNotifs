@@ -75,3 +75,13 @@
 2024-09-18 15:16:07,317 - system2.notification_manager - INFO - Added notification for bitcoin to asss@gmail.com
 2024-09-18 15:16:24,901 - system2.notification_manager - ERROR - Failed to send notification: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-6c75e57b00bsm268896d6.118 - gsmtp')
 2024-09-18 15:21:37,976 - system2.notification_manager - INFO - Added notification for bitcoin to abu.siddique215@gmail.com
+2024-09-18 15:24:28,072 - system2.notification_manager - INFO - Added notification for bitcoin to abu.sidasrf@gmail.com
+2024-09-18 15:24:28,073 - system2.log_manager - INFO - Added bitcoin with threshold $234.00 for notifications to abu.sidasrf@gmail.com
+2024-09-18 15:24:28,073 - system2.log_manager - INFO - Added bitcoin with threshold $234.00 for notifications to abu.sidasrf@gmail.com
+2024-09-18 15:24:35,479 - system2.log_manager - INFO - Viewed bitcoin: Current Price: $60612.00, Threshold: $234.00
+2024-09-18 15:24:35,479 - system2.log_manager - INFO - Viewed bitcoin: Current Price: $60612.00, Threshold: $234.00
+2024-09-18 15:24:49,504 - system2.log_manager - INFO - Removed  from tracking
+2024-09-18 15:24:49,504 - system2.log_manager - INFO - Removed  from tracking
+2024-09-18 15:24:56,065 - system2.log_manager - INFO - Viewed bitcoin: Current Price: $60612.00, Threshold: $234.00
+2024-09-18 15:24:56,065 - system2.log_manager - INFO - Viewed bitcoin: Current Price: $60612.00, Threshold: $234.00
+2024-09-18 15:27:32,119 - system1.api_client - ERROR - Error fetching historical prices for bitcoin: HTTP 401
