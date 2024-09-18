@@ -7,7 +7,11 @@ class LogManager:
     def __init__(self, log_file):
         self.log_file = log_file
         self.logger = logging.getLogger(__name__)
-        self.setup_logging()
+        self.logger.setLevel(logging.INFO)
+        handler = logging.FileHandler(log_file)
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        handler.setFormatter(formatter)
+        self.logger.addHandler(handler)
 
     def setup_logging(self):
         logging.basicConfig(filename=self.log_file, level=logging.INFO,
@@ -113,3 +117,20 @@ class LogManager:
                 except json.JSONDecodeError:
                     continue
         print("Logs re-fed into the system.")
+
+    def get_logs(self, num_lines=50):
+        try:
+            with open(self.log_file, 'r') as file:
+                lines = file.readlines()
+                return ''.join(lines[-num_lines:])
+        except Exception as e:
+            return f"Error reading log file: {str(e)}"
+
+    def log_info(self, message):
+        self.logger.info(message)
+
+    def log_error(self, message):
+        self.logger.error(message)
+
+    def log_warning(self, message):
+        self.logger.warning(message)

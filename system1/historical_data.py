@@ -1,14 +1,15 @@
-from system1.api_client import CoinGeckoAPI
+from system1.api_client import CryptoAPI
 
 class HistoricalData:
     def __init__(self):
-        self.api = CoinGeckoAPI()
+        self.api = CryptoAPI()
 
-    def get_historical_prices(self, coin_id, days):
-        return self.api.get_historical_prices(coin_id, days)
+    async def get_historical_prices(self, coin_id, days):
+        # This method needs to be implemented in the CryptoAPI class
+        return await self.api.get_historical_prices(coin_id, days)
 
-    def simulate_notifications(self, coin_id, days, threshold):
-        prices = self.get_historical_prices(coin_id, days)
+    async def simulate_notifications(self, coin_id, days, threshold):
+        prices = await self.get_historical_prices(coin_id, days)
         if prices is None:
             return []
 

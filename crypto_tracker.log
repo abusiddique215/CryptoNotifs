@@ -61,3 +61,17 @@
 2024-09-18 14:44:42,591 - system1.price_monitor - INFO - Current price of bitcoin: $61059
 2024-09-18 14:45:43,656 - system1.price_monitor - INFO - Current price of bitcoin: $61059
 2024-09-18 14:46:44,732 - system1.price_monitor - INFO - Current price of bitcoin: $61059
+2024-09-18 14:56:36,604 - system1.price_monitor - INFO - Added ethereum with threshold 2340.0
+2024-09-18 14:58:06,051 - system1.price_monitor - INFO - Added ethereum with threshold 6430.0
+2024-09-18 14:58:06,052 - system2.notification_manager - INFO - Added notification for ethereum to abu.siddique215@gmail.com
+2024-09-18 14:58:42,867 - system1.price_monitor - INFO - Removed ethereum from tracking
+2024-09-18 14:58:42,867 - system2.notification_manager - INFO - Removed notification for ethereum
+2024-09-18 15:01:04,529 - system1.price_monitor - INFO - Added bitcoin with threshold 60800.0
+2024-09-18 15:01:04,530 - system2.notification_manager - INFO - Added notification for bitcoin to abu.siddique215@gmail.com
+2024-09-18 15:08:38,516 - system1.price_monitor - INFO - Added bitcoin with threshold 60700.0
+2024-09-18 15:12:49,280 - system1.price_monitor - INFO - Added bitcoin with threshold 343.0
+2024-09-18 15:12:49,281 - system2.notification_manager - INFO - Added notification for bitcoin to abu.siddique215@gmail.com
+2024-09-18 15:14:12,286 - system2.notification_manager - INFO - Added notification for bitcoin to abu.siddique215@gmail.com
+2024-09-18 15:16:07,317 - system2.notification_manager - INFO - Added notification for bitcoin to asss@gmail.com
+2024-09-18 15:16:24,901 - system2.notification_manager - ERROR - Failed to send notification: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-6c75e57b00bsm268896d6.118 - gsmtp')
+2024-09-18 15:21:37,976 - system2.notification_manager - INFO - Added notification for bitcoin to abu.siddique215@gmail.com

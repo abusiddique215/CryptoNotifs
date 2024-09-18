@@ -49,9 +49,10 @@ class UserInterface:
         coin_id = input("Enter the coin ID (e.g., bitcoin): ")
         threshold = float(input("Enter the price threshold: "))
         email = input("Enter your email for notifications: ")
+        
         self.price_monitor.add_coin(coin_id, threshold)
         self.notification_manager.add_notification(coin_id, email)
-        print(f"Added {coin_id} with threshold ${threshold}")
+        print(f"Added {coin_id} with threshold ${threshold:.2f} for notifications to {email}")
 
     async def remove_coin(self):
         coin_id = input("Enter the coin ID to remove: ")
