@@ -1,0 +1,39 @@
+<high_level_desc›Build a comprehensive cryptocurrency price tracking system with a notification feature, consisting of two modular systems: 
+1. An API endpoint that extracts real-time and historical cryptocurrency data from external sources. 
+2. A second system that connects to this endpoint to monitor prices, generate user-defined notifications, and log all activities.
+Ensure the system provides extensive logging and is easy to deploy with clear, step-by-step setup instructions. The goal is for users to be notified when a coin drops below a specified price, aiding in strategic buying decisions.‹/high_level_desc>
+
+‹system1>This system interfaces with the CoinGecko API to retrieve both real-time and historical prices for a variety of cryptocurrencies. The system must prompt the user to input the following:
+- **API ID**: The unique identifier of the cryptocurrency the user wishes to track (e.g., Bitcoin, Ethereum, etc.).
+- **Price threshold**: The price value below which the user would like to receive notifications.
+
+The system should continuously monitor the coin’s price and trigger notifications whenever the price falls below the user-defined threshold. It must support tracking multiple coins at once, allowing each to have a different threshold. The system should provide detailed logs of the following:
+- **User inputs**: API ID, price thresholds, and timestamp of input.
+- **Price check events**: Frequency of price checks, timestamps, and results (current price).
+- **Notification events**: When and why a notification was triggered, including the exact price at the moment of notification and which coin triggered it.
+
+This system must also include a mechanism to fetch and analyze historical prices to enable backtracking simulations for testing various strategies. This functionality will allow the user to simulate notifications based on past price movements, aiding in strategic planning for future investments. Logs for historical data retrieval and simulated notifications must also be included for future analysis.‹/system1>
+
+‹system2›This system connects to the API endpoint in system1 and facilitates real-time monitoring and notifications based on user-defined price thresholds. It should:
+- Continuously poll the API at configurable intervals (e.g., every minute, 5 minutes, or user-defined) to track current coin prices.
+- Generate and send notifications to the user (e.g., via email, SMS, or desktop alert) when a tracked coin drops below the specified threshold.
+- Allow users to configure multiple notification rules, each based on different coins and their corresponding thresholds.
+
+Additionally, this system must include a strategy engine that generates three distinct strategies for analyzing how price fluctuations affect user notifications:
+1. **Time-based strategy**: Analyze how frequently prices reach the notification threshold at different times of day, optimizing for when to check prices more or less frequently.
+2. **Percentage-based strategy**: Notify the user when a coin's price drops by a certain percentage from its peak value within a defined time window.
+3. **Custom threshold strategy**: Provide the user with the option to dynamically adjust the price threshold based on trends in the market, allowing more flexible notifications.
+
+All strategies must be logged, and users should be able to view the performance of each strategy in simulated backtests using historical data (provided by system1). Each log should detail the strategy used, the price data that triggered notifications, the timing of the events, and any user interaction with the system.
+
+The system should also include a logging feature that tracks:
+- **API connection logs**: Records of successful and failed API connections.
+- **Notification logs**: Details on every notification sent, including timestamps, notification method (email, SMS, etc.), and recipient.
+- **Strategy logs**: For each strategy simulation, a report on how many notifications would have been triggered under the simulated conditions.
+These logs must be exportable and easy to analyze for future improvements and adjustments.
+
+Moreover, the system should be designed with scalability in mind, supporting future integration with additional APIs or additional coin tracking systems. It should provide an easy-to-follow setup process with clear installation instructions for non-technical users.‹/system2›
+
+<improvements>The system must be capable of continuous improvement through the use of log analysis. By analyzing the extracted logs, users should be able to adjust the price notification system based on historical data and past performance. For example, if a user realizes that they are receiving too many or too few notifications, they should be able to adjust the notification thresholds or strategies and test them again in backtracking mode. The system should support easy log export, allowing users or developers to re-feed logs into the system to optimize its performance and accuracy based on historical patterns. Logs should be structured in a way that they can be reused to fine-tune both system1 and system2.‹/improvements>
+
+<prompt>Now build both system1 and system2 in a modular approach that is user-friendly and easy to set up. The system must support detailed logging and allow for exporting and re-feeding logs into the system for improvement. Include support for tracking multiple coins, running backtracking simulations with historical data, and testing different notification strategies. Ensure clear, step-by-step setup instructions for both technical and non-technical users. The code should be modular and scalable for future expansions, including new APIs or cryptocurrencies. Provide a clean interface for users to input their settings, review logs, and manage their notification preferences. <prompt>

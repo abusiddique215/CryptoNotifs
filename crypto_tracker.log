@@ -1,0 +1,63 @@
+2024-09-18 13:50:56,180 - system1.price_monitor - INFO - Added bitcoin with threshold 50000.0
+2024-09-18 13:50:56,320 - system1.price_monitor - INFO - Current price of bitcoin: $59977
+2024-09-18 13:51:57,448 - system1.price_monitor - INFO - Current price of bitcoin: $59990
+2024-09-18 13:52:58,556 - system1.price_monitor - INFO - Current price of bitcoin: $59990
+2024-09-18 13:53:59,653 - system1.price_monitor - INFO - Current price of bitcoin: $59990
+2024-09-18 13:55:00,745 - system1.price_monitor - INFO - Current price of bitcoin: $59990
+2024-09-18 13:56:01,845 - system1.price_monitor - INFO - Current price of bitcoin: $59990
+2024-09-18 13:57:02,949 - system1.price_monitor - INFO - Current price of bitcoin: $60226
+2024-09-18 13:58:04,037 - system1.price_monitor - INFO - Current price of bitcoin: $60226
+2024-09-18 13:59:05,122 - system1.price_monitor - INFO - Current price of bitcoin: $60226
+2024-09-18 14:00:06,210 - system1.price_monitor - INFO - Current price of bitcoin: $60226
+2024-09-18 14:01:07,306 - system1.price_monitor - INFO - Current price of bitcoin: $60226
+2024-09-18 14:02:08,393 - system1.price_monitor - INFO - Current price of bitcoin: $59977
+2024-09-18 14:03:09,514 - system1.price_monitor - INFO - Current price of bitcoin: $59977
+2024-09-18 14:04:10,600 - system1.price_monitor - INFO - Current price of bitcoin: $59977
+2024-09-18 14:05:11,703 - system1.price_monitor - INFO - Current price of bitcoin: $59977
+2024-09-18 14:06:12,799 - system1.price_monitor - INFO - Current price of bitcoin: $59977
+2024-09-18 14:07:13,889 - system1.price_monitor - INFO - Current price of bitcoin: $60735
+2024-09-18 14:08:14,977 - system1.price_monitor - INFO - Current price of bitcoin: $60735
+2024-09-18 14:09:16,128 - system1.price_monitor - INFO - Current price of bitcoin: $60735
+2024-09-18 14:10:17,234 - system1.price_monitor - INFO - Current price of bitcoin: $60735
+2024-09-18 14:11:18,328 - system1.price_monitor - INFO - Current price of bitcoin: $60735
+2024-09-18 14:12:19,426 - system1.price_monitor - INFO - Current price of bitcoin: $60307
+2024-09-18 14:23:34,980 - system1.price_monitor - INFO - Added shiba-inu with threshold 1.0
+2024-09-18 14:23:35,080 - system1.price_monitor - INFO - Current price of shiba-inu: $1.347e-05
+2024-09-18 14:23:38,944 - system2.notification_manager - ERROR - Failed to send notification: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials af79cd13be357-7ab3eb62960sm479137085a.101 - gsmtp')
+2024-09-18 14:23:38,944 - system2.log_manager - INFO - {"type": "notification", "coin_id": "shiba-inu", "price": 1.347e-05, "threshold": 1.0, "recipient": "abu.siddique215@gmail.com", "timestamp": "2024-09-18T14:23:38.944149"}
+2024-09-18 14:24:40,014 - system1.price_monitor - INFO - Current price of shiba-inu: $1.347e-05
+2024-09-18 14:24:40,231 - system2.notification_manager - ERROR - Failed to send notification: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials af79cd13be357-7ab3eb56319sm477783185a.94 - gsmtp')
+2024-09-18 14:24:40,231 - system2.log_manager - INFO - {"type": "notification", "coin_id": "shiba-inu", "price": 1.347e-05, "threshold": 1.0, "recipient": "abu.siddique215@gmail.com", "timestamp": "2024-09-18T14:24:40.231487"}
+2024-09-18 14:25:41,339 - system1.price_monitor - INFO - Current price of shiba-inu: $1.347e-05
+2024-09-18 14:25:41,615 - system2.notification_manager - ERROR - Failed to send notification: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-6c75e44bf15sm10576d6.11 - gsmtp')
+2024-09-18 14:25:41,616 - system2.log_manager - INFO - {"type": "notification", "coin_id": "shiba-inu", "price": 1.347e-05, "threshold": 1.0, "recipient": "abu.siddique215@gmail.com", "timestamp": "2024-09-18T14:25:41.616169"}
+2024-09-18 14:26:42,718 - system1.price_monitor - INFO - Current price of shiba-inu: $1.347e-05
+2024-09-18 14:26:42,939 - system2.notification_manager - ERROR - Failed to send notification: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials af79cd13be357-7ab3eb56319sm477958385a.94 - gsmtp')
+2024-09-18 14:26:42,940 - system2.log_manager - INFO - {"type": "notification", "coin_id": "shiba-inu", "price": 1.347e-05, "threshold": 1.0, "recipient": "abu.siddique215@gmail.com", "timestamp": "2024-09-18T14:26:42.939940"}
+2024-09-18 14:27:44,059 - system1.price_monitor - INFO - Current price of shiba-inu: $1.347e-05
+2024-09-18 14:27:44,300 - system2.notification_manager - ERROR - Failed to send notification: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-6c58c7b3485sm46430016d6.114 - gsmtp')
+2024-09-18 14:27:44,300 - system2.log_manager - INFO - {"type": "notification", "coin_id": "shiba-inu", "price": 1.347e-05, "threshold": 1.0, "recipient": "abu.siddique215@gmail.com", "timestamp": "2024-09-18T14:27:44.300556"}
+2024-09-18 14:28:45,391 - system1.price_monitor - INFO - Current price of shiba-inu: $1.346e-05
+2024-09-18 14:28:45,628 - system2.notification_manager - ERROR - Failed to send notification: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-6c75e45eee3sm13056d6.43 - gsmtp')
+2024-09-18 14:28:45,628 - system2.log_manager - INFO - {"type": "notification", "coin_id": "shiba-inu", "price": 1.346e-05, "threshold": 1.0, "recipient": "abu.siddique215@gmail.com", "timestamp": "2024-09-18T14:28:45.628674"}
+2024-09-18 14:29:22,097 - system1.price_monitor - INFO - Added bitcoin with absolute threshold 59000.0
+2024-09-18 14:29:22,190 - system1.price_monitor - INFO - Current price of bitcoin: $60492
+2024-09-18 14:30:10,793 - system1.price_monitor - INFO - Added bitcoin with absolute threshold 60000.0
+2024-09-18 14:30:10,888 - system1.price_monitor - INFO - Current price of bitcoin: $60492
+2024-09-18 14:31:12,001 - system1.price_monitor - INFO - Current price of bitcoin: $60492
+2024-09-18 14:32:13,089 - system1.price_monitor - INFO - Current price of bitcoin: $60392
+2024-09-18 14:33:14,179 - system1.price_monitor - INFO - Current price of bitcoin: $60392
+2024-09-18 14:34:15,275 - system1.price_monitor - INFO - Current price of bitcoin: $60392
+2024-09-18 14:35:16,387 - system1.price_monitor - INFO - Current price of bitcoin: $60392
+2024-09-18 14:36:17,469 - system1.price_monitor - INFO - Current price of bitcoin: $60392
+2024-09-18 14:37:18,562 - system1.price_monitor - INFO - Current price of bitcoin: $60557
+2024-09-18 14:38:19,660 - system1.price_monitor - INFO - Current price of bitcoin: $60557
+2024-09-18 14:39:20,757 - system1.price_monitor - INFO - Current price of bitcoin: $60557
+2024-09-18 14:40:21,865 - system1.price_monitor - INFO - Current price of bitcoin: $60557
+2024-09-18 14:41:22,975 - system1.price_monitor - INFO - Current price of bitcoin: $60557
+2024-09-18 14:42:40,314 - system1.price_monitor - INFO - Added bitcoin with absolute threshold 60800.0
+2024-09-18 14:42:40,402 - system1.price_monitor - INFO - Current price of bitcoin: $61059
+2024-09-18 14:43:41,487 - system1.price_monitor - INFO - Current price of bitcoin: $61059
+2024-09-18 14:44:42,591 - system1.price_monitor - INFO - Current price of bitcoin: $61059
+2024-09-18 14:45:43,656 - system1.price_monitor - INFO - Current price of bitcoin: $61059
+2024-09-18 14:46:44,732 - system1.price_monitor - INFO - Current price of bitcoin: $61059
