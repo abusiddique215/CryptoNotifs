@@ -8,7 +8,6 @@ class PriceMonitor:
 
     def add_coin(self, coin_id, threshold):
         self.tracked_coins[coin_id] = threshold
-        asyncio.create_task(self.api.start_websocket([coin_id]))
 
     def remove_coin(self, coin_id):
         if coin_id in self.tracked_coins:
@@ -24,3 +23,9 @@ class PriceMonitor:
 
     def get_threshold(self, coin_id):
         return self.tracked_coins.get(coin_id)
+
+    async def monitor_prices(self, callback):
+        async for coin_id, price in self.run(interval=60):  # Default interval of 60 seconds
+            threshold = self.get_threshold(coin_id)
+            if price < threshold:
+                await callback(coin_id, price, threshold)

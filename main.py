@@ -5,9 +5,9 @@ from system1.historical_data import HistoricalData
 from system2.notification_manager import NotificationManager
 from system2.log_manager import LogManager
 from system2.strategy_engine import StrategyEngine
-from config import EMAIL_CONFIG, CHECK_INTERVAL, LOG_FILE, LOG_LEVEL
+from config import EMAIL_CONFIG, CHECK_INTERVAL, LOG_FILE
 
-logging.basicConfig(filename=LOG_FILE, level=getattr(logging, LOG_LEVEL),
+logging.basicConfig(filename=LOG_FILE, level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 class CryptoTracker:
@@ -18,16 +18,9 @@ class CryptoTracker:
         self.historical_data = HistoricalData()
         self.strategy_engine = StrategyEngine(self.historical_data)
 
-    async def start(self):
-        # Initialize WebSocket connections for all tracked coins
-        for coin_id in self.price_monitor.tracked_coins:
-            await self.price_monitor.api.start_websocket([coin_id])
-
-    async def monitor_prices(self):
-        async for coin_id, price in self.price_monitor.run(interval=CHECK_INTERVAL):
-            threshold = self.price_monitor.get_threshold(coin_id)
-            if price < threshold:
-                self.notification_manager.notify(coin_id, price, threshold)
+    async def price_alert_callback(self, coin_id, price, threshold):
+        self.log_manager.log_info(f"Price alert: {coin_id} is now ${price:.2f}, below threshold ${threshold:.2f}")
+        await self.notification_manager.notify(coin_id, price, threshold)
 
     async def add_coin(self):
         coin_id = input("Enter the coin ID (e.g., bitcoin): ")
@@ -69,12 +62,12 @@ class CryptoTracker:
         coin_id = input("Enter the coin ID for simulation: ")
         days = int(input("Enter the number of days for historical data: "))
         threshold = float(input("Enter the price threshold for simulation: "))
-        results = self.strategy_engine.simulate(coin_id, days, threshold)
+        results = await self.strategy_engine.simulate(coin_id, days, threshold)
         print("Simulation results:")
         print(results)
 
     async def main_loop(self):
-        monitor_task = asyncio.create_task(self.price_monitor.run(interval=CHECK_INTERVAL))
+        monitor_task = asyncio.create_task(self.price_monitor.monitor_prices(self.price_alert_callback))
 
         while True:
             print("\nCryptocurrency Price Tracker")
