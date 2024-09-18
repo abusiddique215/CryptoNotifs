@@ -1,7 +1,7 @@
 import logging
 import json
 from datetime import datetime
-import pandas as pd
+from collections import defaultdict
 
 class LogManager:
     def __init__(self, log_file):
@@ -64,32 +64,43 @@ class LogManager:
                 except json.JSONDecodeError:
                     continue
 
-        df = pd.DataFrame(logs)
-        
-        # Analysis of notifications
-        if 'type' in df.columns:
-            notifications = df[df['type'] == 'notification']
-            notifications_per_coin = notifications['coin_id'].value_counts()
-            avg_price_per_coin = notifications.groupby('coin_id')['price'].mean()
+        notifications = [log for log in logs if log['type'] == 'notification']
+        simulations = [log for log in logs if log['type'] == 'strategy_simulation']
 
-            print("Notification Analysis:")
-            print(f"Total notifications: {len(notifications)}")
-            print("Notifications per coin:")
-            print(notifications_per_coin)
-            print("Average price per coin:")
-            print(avg_price_per_coin)
+        # Analysis of notifications
+        notifications_per_coin = defaultdict(int)
+        total_price_per_coin = defaultdict(float)
+        for notification in notifications:
+            coin_id = notification['coin_id']
+            notifications_per_coin[coin_id] += 1
+            total_price_per_coin[coin_id] += notification['price']
+
+        print("Notification Analysis:")
+        print(f"Total notifications: {len(notifications)}")
+        print("Notifications per coin:")
+        for coin_id, count in notifications_per_coin.items():
+            print(f"{coin_id}: {count}")
+        print("Average price per coin:")
+        for coin_id, total_price in total_price_per_coin.items():
+            avg_price = total_price / notifications_per_coin[coin_id]
+            print(f"{coin_id}: ${avg_price:.2f}")
 
         # Analysis of strategy simulations
-        simulations = df[df['type'] == 'strategy_simulation']
-        if not simulations.empty:
-            simulations_per_strategy = simulations['strategy'].value_counts()
-            avg_notifications_per_strategy = simulations.groupby('strategy')['notifications_count'].mean()
+        simulations_per_strategy = defaultdict(int)
+        total_notifications_per_strategy = defaultdict(int)
+        for simulation in simulations:
+            strategy = simulation['strategy']
+            simulations_per_strategy[strategy] += 1
+            total_notifications_per_strategy[strategy] += simulation['notifications_count']
 
-            print("\nStrategy Simulation Analysis:")
-            print("Simulations per strategy:")
-            print(simulations_per_strategy)
-            print("Average notifications per strategy:")
-            print(avg_notifications_per_strategy)
+        print("\nStrategy Simulation Analysis:")
+        print("Simulations per strategy:")
+        for strategy, count in simulations_per_strategy.items():
+            print(f"{strategy}: {count}")
+        print("Average notifications per strategy:")
+        for strategy, total_notifications in total_notifications_per_strategy.items():
+            avg_notifications = total_notifications / simulations_per_strategy[strategy]
+            print(f"{strategy}: {avg_notifications:.2f}")
 
     def re_feed_logs(self, price_monitor, notification_manager):
         with open(self.log_file, 'r') as log_file:
