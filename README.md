@@ -8,7 +8,7 @@ This project is a comprehensive cryptocurrency price tracking system with a noti
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/cryptocurrency-tracker.git
+   git clone https://github.com/abusiddique215/CryptoNotifs.git
    cd cryptocurrency-tracker
    ```
 
